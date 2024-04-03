@@ -3,6 +3,7 @@ Código para a função 'parseAndExecute' */
 
 #include <stdbool.h>
 #include <stdio.h>
+#include "location.h"
 #include <string.h>  
 /* \_ Inclui funções de manipular strings: 
 strcmp: compara duas strings e retorna um numero inteiro que indica se a 1a string é menor, igual ou maior que a 2a; 
@@ -17,22 +18,24 @@ bool parseAndExecute(char *input) {
 	
 	if (verbo != NULL) {  /* != significa 'is not equal to' -- não faz nada se o jogador não digitar nada.
 		Verifica se o input no teclado corresponde com os verbos reconhecidos, é case-sensitive. */
-		if (strcmp(verbo, "sair") == 0) {
+		if (strcmp(verbo, "quit") == 0) {
 			return false;  // Retornar 'false' faz o main loop terminar 
 		}
 		
 		/* else if = condicional usada para testar varias condições em sequencia. Compara se a string
 		armazenada na variavel "verbo" com a string "olhar", ou seja, verifica se 'verbo' é igual a "olhar" */
-		else if (strcmp(verbo, "olhar") == 0) {
-			printf("Está um pouco escuro aqui.\n");
+		else if (strcmp(verbo, "look") == 0) {
+			//printf("Text for look.\n");
+			executeLook(substantivo);
 		}
 		
-		else if (strcmp(verbo, "ir") == 0) {
-			printf("Está muito escuro para ir para algum lugar.\n");
+		else if (strcmp(verbo, "go") == 0) {
+			//printf("Text for look.\n");
+			executeGo(substantivo);
 		}
 		
 		else {
-			printf("\nEu não sei o que '%s' significa.\n", verbo);  // Mostra o que o usuario digitou 
+			printf("I don't know what '%s' means.\n", verbo);  // Mostra o que o usuario digitou 
 		}
 	}
 	return true;
