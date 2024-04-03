@@ -1,0 +1,32 @@
+Seguindo tutorial: http://helderman.github.io/htpataic/htpataic03.html
+
+
+O principio básico de um text-adventure é: 
+Jogador digita um comando -> o programa usa um parser e executa o comando - repete
+
+
+O que é um arquivo .h?
+
+Um arquivo .h em C é um arquivo de cabeçalho. Ele é usado para declarar as funções, variáveis, macros e tipos de dados que 
+são compartilhados entre vários arquivos de código-fonte em um programa C.
+
+Os arquivos de cabeçalho normalmente contêm:
+
+Declarações de Funções: As declarações de funções fornecem ao compilador informações sobre a assinatura das funções 
+(o tipo de retorno, os tipos dos parâmetros etc.), permitindo que o compilador verifique se as chamadas de função estão 
+corretas.
+
+Declarações de Variáveis Globais: Se houver variáveis globais que precisam ser acessadas em vários arquivos de 
+código-fonte, suas declarações podem ser incluídas no arquivo de cabeçalho.
+
+Definições de Macros e Constantes: Macros e constantes que são usadas em todo o programa podem ser definidas no arquivo 
+de cabeçalho para evitar repetições e manter o código mais organizado.
+
+Declarações de Estruturas e Tipos de Dados: Se houver estruturas de dados personalizadas ou tipos definidos pelo usuário 
+que precisem ser acessados em vários arquivos, suas declarações podem ser colocadas no arquivo de cabeçalho.
+
+Por exemplo, se você tiver uma função chamada calcularDistancia em um arquivo matematica.c, sua declaração poderia ser 
+colocada em um arquivo de cabeçalho matematica.h para que outros arquivos de código-fonte possam chamar essa função.
+
+Os arquivos de cabeçalho são incluídos nos arquivos de código-fonte usando a diretiva #include. Isso permite que as 
+definições contidas no arquivo de cabeçalho sejam acessíveis a partir do arquivo de código-fonte.
