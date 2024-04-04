@@ -1,34 +1,33 @@
 /* Coded by Ivo - 02/04/24 -- Programando um Text Game 
 
-LEMBRETES: (Mais informaÃ§Ãµes no .txt)
+LEMBRETES: (Mais informações no .txt)
 != significa 'is not equal to' 
 gcc -o JOGO main.c parsexec.c location.c   -- para compilar  */
 
 #include <stdio.h>  // C standard library 
 #include <stdbool.h>  // Adiciona booleans 
-#include "parsexec.h"  // importa funÃ§Ã£o criada 
-#include <locale.h>  // Para mostrar caracteres especiais - nÃ£o irei usar
+#include "parsexec.h"  // importa função criada 
+#include <locale.h>  // Para mostrar caracteres especiais 
 
-// Declara variavel estatica (explico o que Ã© em location.c)
-static char input[100] = "look around";  // buffer de string que coleta input do teclado. 
+// Declara variavel estatica (explico o que é em location.c)
+static char input[100] = "olhar ao redor";  // buffer de string que coleta input do teclado. 
 
-/* FunÃ§Ã£o declarada e definida com o tipo de retorno bool, que indica que a funÃ§Ã£o retorna um valor 
-de true ou false. O static antes da declaraÃ§Ã£o indica que essa funÃ§Ã£o sÃ³ Ã© visÃ­vel dentro do arquivo 
-onde estÃ¡ declarada */
+/* Função declarada e definida com o tipo de retorno bool, que indica que a função retorna um valor 
+de true ou false. O static antes da declaração indica que essa função só é visível dentro do arquivo 
+onde está declarada */
 static bool getInput(void) {
 	printf("\n> ");  // Prompt com o texto para o jogador digitar. 
-	return fgets(input, sizeof input, stdin) != NULL;  // FunÃ§Ã£o fgets (standard) pega input do teclado. 
+	return fgets(input, sizeof input, stdin) != NULL;  // Função fgets (standard) pega input do teclado. 
 }
 
-int main() {  // FunÃ§Ã£o main() Ã© o ponto inicial de um programa em C e que chama as outras funÃ§Ãµes.   
-    
-	//setlocale(LC_ALL, "Portuguese");  // Parte para deixar em portugues, nao funcionou
-    printf("\t TEngine - Adventure Text Games Engine\n");
-	printf("\t \t By Pedro Ivo - 2024 \n");	// \t = TabulaÃ§Ã£o  
-    printf("\nWelcome to the default room.");
+int main() {  // Função main() é o ponto inicial de um programa em C e que chama as outras funções.   
+    setlocale(LC_ALL, "Portuguese");  // Parte para deixar em portugues
+    printf("\t TEngine - Text Adventure Game Engine\n");
+	printf("\t \t By Pedro Ivo - 2024 \n");	// \t = Tabulação  
+    printf("\nBem-vindo(a) à sala padrão.");
 	
-	while (parseAndExecute(input) && getInput());  // main loop, chamando as outras funÃ§Ãµes atÃ© elas darem 'false'. 
-	printf("\nExiting...\n"); // Mensagem de quando o programa termina
+	while (parseAndExecute(input) && getInput());  // main loop, chamando as outras funções até elas darem 'false'. 
+	printf("\nSaindo...\n"); // Mensagem de quando o programa termina
 	
-    return 0;  // FunÃ§Ã£o main() retorna um zero exit code para indicar que o programa terminou.  
+    return 0;  // Função main() retorna um zero exit code para indicar que o programa terminou.  
 }
