@@ -2,7 +2,7 @@
 
 LEMBRETES: (Mais informações no .txt)
 != significa 'is not equal to' 
-gcc -o JOGO main.c parsexec.c location.c   -- para compilar  */
+gcc -o JOGO main.c parsexec.c location.c misc.c object.c substantivo.c   -- para compilar  */
 
 #include <stdio.h>  // C standard library 
 #include <stdbool.h>  // Adiciona booleans 
