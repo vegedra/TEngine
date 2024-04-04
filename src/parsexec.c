@@ -17,7 +17,10 @@ bool parseAndExecute(char *input) {
 	char *substantivo = strtok(NULL, " \n");
 	
 	if (verbo != NULL) {  /* != significa 'is not equal to' -- não faz nada se o jogador não digitar nada.
-		Verifica se o input no teclado corresponde com os verbos reconhecidos, é case-sensitive. */
+		Verifica se o input no teclado corresponde com os verbos reconhecidos, é case-sensitive.
+		verifica se as strings a e b são iguais. Se forem iguais, a função strcmp() retorna 0, e o bloco de código 
+		dentro do if será executado. Caso contrário, se as strings forem diferentes, o bloco de código dentro do if 
+		será ignorado.	*/
 		if (strcmp(verbo, "quit") == 0) {
 			return false;  // Retornar 'false' faz o main loop terminar 
 		}
